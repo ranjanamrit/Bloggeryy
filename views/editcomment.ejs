@@ -1,0 +1,14 @@
+<%- include ('./partials/header') %> 
+<div class="container">
+    <form id="form" action="/blogs/<%= blog_id %>/comments/<%= comment._id %>?_method=PUT  " method="POST">
+        <h1> EDIT</h1>
+        <div class="form-group">
+        <label for="exampleFormControlInput1">COMMENT</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name= "comment[text]" value="<%= comment.text %> ">
+        </div>
+        <input class= " btn btn-success btn-lg btn-block"type="submit">
+    </form>
+    <a class="btn" href="/blogs/<%= blog_id %> "> < BACK TO BLOG</a>
+</div>
+
+<%- include ('./partials/footer') %> 

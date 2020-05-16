@@ -1,0 +1,32 @@
+<%- include ('./partials/header') %> 
+<div class="container">
+    <div id="blog">
+        <div ><h1><%= blog.title.toUpperCase() %></h1></div>
+        <div><p><%= blog.created.toDateString() %></p></div>
+        <div><p>By- <%= blog.author.username %> </p></div>
+        <div id="blogBody" class="row"><div class="col-12"><p> <%= blog.body %> </p></div></div>
+        <% if (currentUser &&blog.author.id.equals(currentUser._id)) { %>
+            <a class="btn btn-success"href="/blogs/<%= blog._id %>/edit">EDIT BLOG</a>
+            <form id="delete" action="/blogs/<%=blog._id%>?_method=DELETE" method="post">
+            <button class="btn btn-danger">DELETE</button>
+            </form>
+        <% } %>
+            <hr>
+        <div id="add-com"class="text-right "><a class="btn btn-primary" href="/blogs/<%= blog._id %>/comments/new">ADD COMMENT</a></div>
+        <div id="comments-display">
+            <% blog.comments.forEach(comment => { %>
+                <p><strong><%= comment.author.username  %></strong> - <%= comment.text %>
+                </p>
+                <% if(currentUser &&comment.author.id.equals(currentUser._id)){  %> 
+                <a class="btn btn-sm btn-success"href="/blogs/<%= blog._id %>/comments/<%= comment._id %>/edit  ">EDIT</a>
+                <form id="deleteComment" action="/blogs/<%=blog._id%>/comments/<%= comment._id %>?_method=DELETE" method="post">
+                    <button class="btn btn-danger btn-sm">DELETE</button>
+                </form>
+            <% }%>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+    
+<%- include ('./partials/footer') %> 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOGGERY</title>
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2016/10/18/19/46/vintage-1751222_960_720.png" type="img/icon type">
+    <link rel="stylesheet" type= "text/css" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+
+    
+</head>
+<a name="top"></a>
+<body id="body">
+    <div id="mainNav" class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light  ">
+        <a  id="brand" class="navbar-brand" href="/blogs"><img id="icon-image"src="https://cdn.pixabay.com/photo/2016/10/18/19/46/vintage-1751222_960_720.png">BLOGGERY</a>
+        
+         
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <% if (currentUser) { %>
+            <a id="welcome" href="/blogs">Welcome <%= currentUser.username %></a>
+            <% } %>
+            <ul class="navbar-nav ml-auto">
+            <% if (!currentUser) { %>
+                <li class="nav-item">
+                  <a class="nav-link " href="/register">SIGNUP</a>
+                </li>
+                <li class="nav-item">
+                  <a  class="nav-link " href="/login">LOGIN</a>
+                </li>
+            <% } else  { %>
+              <li class="nav-item ">
+                <a class="nav-link  " href="/blogs/new">NEW POST</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  " href="/logout">LOGOUT</a>
+                </li>
+            </ul>
+            <% } %>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <% if (error && error.length>0) { %>
+      <div class="alert alert-danger" role="alert"><%= error %> </div>
+      <% }; %>
+      <% if (success && success.length>0) { %>
+      <div class="alert alert-success" role="alert"><%= success %> </div>
+      <% } %>
+    </div>
+    

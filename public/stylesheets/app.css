@@ -1,0 +1,207 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#body{
+    background:url("./wallpaperflare.com_wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 60rem;
+}
+#brand{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 0.5;
+}
+#welcome{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    margin-left: 1.3rem;
+}
+.nav-item{
+    margin-right: 1.5rem;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    background-color:coral;
+    margin-top: 1rem;
+    border-radius: 10px;
+
+}
+.nav-item:hover{
+    background-color:burlywood;
+    transition:all 0.5s ease;
+}
+#blog h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+}
+#blog{
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    display: block;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    border: black 7px double;
+}
+#blogBody{
+    overflow-wrap:break-word;
+    text-align: left;
+}
+#icon-image{
+    height: 3.5rem;
+    width: 2rem;
+}
+#comments-display{
+    text-align: left;
+}
+#add-com{
+    margin-top: 1rem;
+}
+#form{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 5px;
+    margin-top: 15%;
+    font-family: 'Montserrat', sans-serif;
+    border: black 7px double;
+    padding: 20px;
+}
+#delete {
+    display: inline;
+}
+#deleteComment {
+    display: inline;
+}
+#log{
+    height: 80vh;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    width: 25.75rem;
+    height: 35rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1rem;
+    padding: 0 1.5rem 0 1.5rem;
+    box-shadow: 0 1.563rem 2.25rem 0.75rem ;
+    background-color: rgb(255, 216, 86);
+}
+.login input{
+    width: 100%;
+    height: 2.125rem;
+    color: #363636;
+    border: none;
+    background-color: rgb(255, 216, 86);
+    border-bottom: 0.125rem solid #9b9b9b ;
+    outline: none;
+}
+.login label{
+    transform: translateY(-4.125rem);
+    pointer-events: none;
+}
+.contentUsername .contentPass{
+    position : absolute;
+    top: 2rem;
+    color: #9b9b9b;
+    transition: ease all 0.3s;
+
+}
+ .login input:focus+.labelUsername .contentUsername,
+ .login input:valid+.labelUsername .contentUsername{
+     transform: translateY(-100%);
+     font-size: 1.5rem;
+     color: #333;
+ }
+ .login input:focus+.labelPass .contentPass,
+ .login input:valid+.labelPass .contentPass{
+     transform: translateY(-100%);
+     font-size: 1.5rem;
+     color: #333;
+ }
+ .login button {
+     background-color: #F7971E;
+     color: white;
+     width: 9.375rem;
+     height: 2.5rem;
+     border: none;
+     border-radius:15px ;
+     display: flex;
+     align-self: center;
+     margin-top: 1.875rem;
+     justify-content: center;
+     font-size: 1rem;
+     text-align: center;
+     outline: none;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+.login button:hover{
+    transform: translateY(0.438rem);
+}
+#loginH{
+    align-self: center;
+    color: #333333;
+    margin-bottom: 6.875rem;
+}
+footer{
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#back{
+    display: block;
+    margin-bottom: 3rem;
+    margin-right: 2rem;
+    float: right;
+    color:black;
+    background-color: coral;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 40%;
+}
+#back:hover{
+    background-color: burlywood;
+    transition:all 0.5s ease;
+
+}
+
+@media (min-device-width: 575px){
+    #blog h1{
+       font-size: 3rem;
+    }
+    #brand{
+        font-size: 2rem;
+    }
+    #icon-image{
+        height: 2.5rem;
+        width: 1.5rem;
+    }
+   #welcome{
+       font-size: 1.1rem;
+   }
+   #log{
+       height: 85vh;
+
+   }
+}

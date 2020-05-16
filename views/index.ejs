@@ -1,0 +1,15 @@
+<%- include ('./partials/header') %> 
+
+<% blogs.forEach(blog => { %>
+<div id="blog"class="container">
+    <div>
+        <h1><%= blog.title.toUpperCase() %> </h1>
+        <span><%= blog.created.toDateString() %> </span>
+        <div><p>By- <%= blog.author.username %> </p></div>
+        <p><%= blog.description %> </p>
+        <a class="btn btn-info"href="/blogs/<%= blog._id %> ">READ FULL BLOG</a>
+    </div>    
+</div>
+<% }); %> 
+<li class="nav-item"><a id="back" class="nav-link"href="#top">Back to top</a></li>
+<%- include ('./partials/footer') %> 

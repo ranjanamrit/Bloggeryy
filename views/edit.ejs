@@ -1,0 +1,21 @@
+<%- include ('./partials/header') %> 
+<div class="container">
+<form id="form" action="/blogs/<%= blog._id %>?_method=PUT " method="POST">
+    <div> EDIT <%= blog.title.toUpperCase() %> </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">TITLE</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name= "blog[title]" value="<%= blog.title %> ">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">DESCRIPTION</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="blog[description]" value="<%= blog.description %> ">
+      </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">BLOG</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" name = "blog[body]"rows="3"><%= blog.body %> </textarea>
+    </div>
+    <input class= " btn btn-success btn-lg btn-block"type="submit">
+  </form>
+  <a class="btn" href="/blogs/<%= blog._id %> "> <- BACK TO BLOG </a>
+</div>
+<%- include ('./partials/footer') %> 

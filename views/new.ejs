@@ -1,0 +1,21 @@
+<%- include ('./partials/header') %> 
+<div class="container">
+<form id="form" action="/blogs" method="POST">
+    <h1>NEW BLOG</h1>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">TITLE</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name= "blog[title]"placeholder="ENTER BLOG TITLE HERE!!">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">DESCRIPTION</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="blog[description]"placeholder="ENTER DESCRIPTION HERE!!">
+      </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">BLOG</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" name = "blog[body]"rows="3"placeholder="ENTER YOUR BLOG HERE!!!!"></textarea>
+    </div>
+    <input class= " btn btn-success btn-lg btn-block"type="submit">
+  </form>
+  <a class="btn"href="/blogs"> < BACK TO HOME </a>
+</div>
+<%- include ('./partials/footer') %> 
